@@ -1,0 +1,24 @@
+{
+  "name": "wheel-of-prizes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^18",
+    "react-wheel-of-prizes": "^1.0.9",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
+  }
+}
