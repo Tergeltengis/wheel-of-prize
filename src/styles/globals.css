@@ -156,3 +156,11 @@ a {
   background: #2466ff;
   border-radius: 5px;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
