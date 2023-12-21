@@ -6,6 +6,7 @@ import { useState } from "react";
 import IMAGES from "@/assets";
 import { RadioGroup } from "@/components/radio-group";
 import Image from "next/image";
+import { TypeRadioGroup } from "@/components/type-radio-group";
 
 const segments = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 function shuffleArray(array) {
@@ -17,10 +18,10 @@ function shuffleArray(array) {
 
 export default function Home() {
   const [prize, setPrize] = useState("100000");
+  const [isChair, setIsChair] = useState(0);
   const [state, setState] = useState({ portal: "", show: "" });
   shuffleArray(segments);
   const [filteredSegment, setFilteredSegment] = useState(segments);
-  console.log(filteredSegment);
   const weelColors = () => {
     let arr = [];
     let colors = ["#EE4040", "#F0CF50", "#815CD1", "#3DA5E0", "#34A24F"];
@@ -40,7 +41,6 @@ export default function Home() {
     setFilteredSegment(newArray);
     setState({ portal: false, show: winner });
   };
-  console.log(filteredSegment);
   return (
     <div
       style={{
@@ -50,13 +50,16 @@ export default function Home() {
         alignItems: "center",
         paddingTop: "150px",
         paddingBottom: "150px",
-        background: `url(${IMAGES.background.src})`,
+        // background: `url(${IMAGES.background.src})`,
         backgroundSize: "cover",
         height: "100vh",
       }}
     >
       {state.show && <ReactConfetti width={2000} height={"2000"} />}
-      <RadioGroup prize={prize} setPrize={setPrize} />
+      <div style={{ display: "flex", gap: 100 }}>
+        <TypeRadioGroup isChair={isChair} setIsChair={setIsChair} />
+        <RadioGroup prize={prize} setPrize={setPrize} />
+      </div>
       <div className="flex">
         <WheelComponent
           segments={filteredSegment}
@@ -68,15 +71,15 @@ export default function Home() {
           buttonText="Spin"
           isOnlyOnce={false}
           size={290}
-          upDuration={10}
-          downDuration={10}
+          upDuration={500}
+          downDuration={600}
           fontFamily="Arial"
           width={"100%"}
         />
         <Image
-          src={IMAGES.image7.src}
-          width={200}
-          height={200}
+          src={"/prize.png"}
+          width={300}
+          height={700}
           alt="prize"
           style={{ marginLeft: -300 }}
         />
@@ -86,22 +89,35 @@ export default function Home() {
         // modal
         <div className="box">
           <div className="imageBox">
-            <Image
-              src={IMAGES[`image${state.show}`]?.src}
-              alt="prize"
-              width={200}
-              height={200}
-              objectFit="contain"
-            />
+            {isChair === 0 && (
+              <Image
+                src="/wooden-round-table.webp"
+                alt="prize"
+                width={550}
+                height={300}
+                objectFit="contain"
+              />
+            )}
+            {isChair === 1 && (
+              <Image
+                src={IMAGES[`image${prize.slice(0, 3)}`]?.src}
+                alt="prize"
+                width={550}
+                height={300}
+                objectFit="contain"
+              />
+            )}
           </div>
           <h2 className="titleWin">
-            САНДАЛ {"   "}
+            {isChair === 0 ? "ШИРЭЭ" : "САНДАЛ"} {"   "}
             <span style={{ fontSize: 50 }}>{state.show}</span>
             <br />
             <br />
-            <span style={{ fontSize: 50, marginTop: 30 }}>
-              {convert(prize)}₮
-            </span>{" "}
+            {isChair === 1 && (
+              <span style={{ fontSize: 50, marginTop: 30 }}>
+                {convert(prize)}₮
+              </span>
+            )}
           </h2>
           <div className="closeContainer">
             <button

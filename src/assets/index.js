@@ -1,25 +1,18 @@
-import image1 from "./iphone.png";
-import image2 from "./speaker.png";
-import image3 from "./tv.png";
-import image4 from "./laptop.png";
-import image5 from  "./car.png";
-import image6 from "./wash.png";
-import image7 from "./coin.png";
-import image8 from "./trip.png";
-import image9 from  "./amazon.png";
-import image10 from "./airpod.png";
+import image100 from "./hundred.png";
+import image200 from "./two_hundred.png";
+import image250 from "./two_hundred_fifty.png";
+import image300 from "./three_hundred.png";
+import image350 from "./three_hundred_fifty.png";
+import image500 from "./five_hundred.png";
 import background from "./background.jpg";
 
 const IMAGES = {
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-    background
-}
-export default IMAGES
+  image100,
+  image200,
+  image250,
+  image300,
+  image350,
+  image500,
+  background,
+};
+export default IMAGES;

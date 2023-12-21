@@ -17,10 +17,37 @@ export const RadioGroup = ({ setPrize, prize }) => {
         </Form.Field>
         <Form.Field>
           <Radio
+            label="200'000₮"
+            name="radioGroup"
+            value="200000"
+            checked={prize === "200000"}
+            onChange={handleChange}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label="250'000₮"
+            name="radioGroup"
+            value="250000"
+            checked={prize === "250000"}
+            onChange={handleChange}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
             label="300'000₮"
             name="radioGroup"
             value="300000"
             checked={prize === "300000"}
+            onChange={handleChange}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            label="350'000₮"
+            name="radioGroup"
+            value="350000"
+            checked={prize === "350000"}
             onChange={handleChange}
           />
         </Form.Field>
