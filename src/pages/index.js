@@ -77,7 +77,7 @@ export default function Home() {
             fontSize={100}
           />
         </div>
-        <div className="flex flex-col" >
+        <div className="flex flex-col">
           <TypeRadioGroup isChair={isChair} setIsChair={setIsChair} />
           <RadioGroup prize={prize} setPrize={setPrize} />
         </div>
@@ -97,26 +97,42 @@ export default function Home() {
               />
             )}
             {isChair === 1 && (
-              <Image
-                src={IMAGES[`image${prize.slice(0, 3)}`]?.src}
-                alt="prize"
-                width={550}
-                height={300}
-                objectFit="contain"
-              />
+              <div style={{ position: "relative" }}>
+                <Image
+                  src={IMAGES[`prize${prize.slice(0, 3)}`]?.src}
+                  alt="prize"
+                  width={550}
+                  height={300}
+                  objectFit="contain"
+                />{" "}
+                <p
+                  style={{
+                    position: "absolute",
+                    top: "42%",
+                    left: "52%",
+                    color: "#76552A",
+                    fontSize: 20,
+                  }}
+                >
+                  {state.show}
+                </p>
+              </div>
             )}
           </div>
-          <h2 className="titleWin">
-            {isChair === 0 ? "ШИРЭЭ" : "СУУДАЛ"} {"   "}
-            <span style={{ fontSize: 50, color: "#bc13fe" }}>{state.show}</span>
-            <br />
-            <br />
-            {isChair === 1 && (
-              <span style={{ fontSize: 50, marginTop: 30 }}>
-                {convert(prize)}₮
-              </span>
-            )}
-          </h2>
+
+          {isChair === 0 && (
+            <span
+              className="table"
+              style={{
+                fontSize: 300,
+                position: "absolute",
+                top: "40%",
+                left: "40%",
+              }}
+            >
+              {state.show}
+            </span>
+          )}
           <div className="closeContainer">
             <button
               className="closepankaj"

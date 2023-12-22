@@ -124,9 +124,9 @@ a {
 .box {
   padding: 30px 40px;
   background: #fff;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 40px rgba(1, 1, 1, 0.5);
   overflow: hidden;
-  width: 650px;
+  width: 1000px;
   z-index: 2;
   position: absolute;
   border-radius: 20px;
@@ -135,7 +135,8 @@ a {
   text-align: center;
 }
 .box img {
-  width: 550px;
+  width: 900px;
+  height: 100%;
 }
 .title {
   text-align: center;
@@ -195,6 +196,12 @@ a {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
     0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
 } */
+
+.table {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
 
 @keyframes pulsate {
   100% {
