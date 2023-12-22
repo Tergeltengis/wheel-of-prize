@@ -136,7 +136,10 @@ export default function Home() {
           <div className="closeContainer">
             <button
               className="closepankaj"
-              onClick={() => setState({ show: false })}
+              onClick={() => {
+                setState({ show: false });
+                window.location.reload();
+              }}
             >
               OK
             </button>
