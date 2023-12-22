@@ -1,66 +1,117 @@
+import IMAGES from "@/assets";
+import Image from "next/image";
 import React from "react";
-import { Form, Radio } from "semantic-ui-react";
 
 export const RadioGroup = ({ setPrize, prize }) => {
-  const handleChange = (e, { value }) => setPrize(value);
+  const handleChange = (e) => setPrize(e.target.value);
   return (
-    <Form className="flex flex-col">
-      <div className="flex" style={{ gap: 10 }}>
-        <Form.Field>
-          <Radio
-            label="100'000₮"
+    <div
+      className="flex flex-col"
+      style={{ marginLeft: -200, marginTop: 30, gap: 20 }}
+    >
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="100000"
-            checked={prize === "100000"}
             onChange={handleChange}
+            defaultChecked
           />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="200'000₮"
+          <Image src={IMAGES.image100} alt="Option 1" width={150} />
+        </label>
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          4
+        </span>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="200000"
-            checked={prize === "200000"}
             onChange={handleChange}
           />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="250'000₮"
+          <Image src={IMAGES.image200} alt="Option 1" width={150} />
+        </label>
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          1
+        </span>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="250000"
-            checked={prize === "250000"}
             onChange={handleChange}
           />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="300'000₮"
+          <Image src={IMAGES.image250} alt="Option 1" width={150} />
+        </label>{" "}
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          1
+        </span>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="300000"
-            checked={prize === "300000"}
             onChange={handleChange}
           />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="350'000₮"
+          <Image src={IMAGES.image300} alt="Option 1" width={150} />
+        </label>
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          1
+        </span>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="350000"
-            checked={prize === "350000"}
             onChange={handleChange}
           />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-            label="500'000₮"
+          <Image src={IMAGES.image350} alt="Option 1" width={150} />
+        </label>
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          1
+        </span>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
             name="radioGroup"
             value="500000"
-            checked={prize === "500000"}
             onChange={handleChange}
           />
-        </Form.Field>
+          <Image src={IMAGES.image500} alt="Option 1" width={150} />
+        </label>
+        <span className="neonText" style={{ fontSize: 60, padding: 20 }}>
+          x
+        </span>
+        <span className="neonText" style={{ fontSize: 80 }}>
+          2
+        </span>
       </div>
-    </Form>
+    </div>
   );
 };

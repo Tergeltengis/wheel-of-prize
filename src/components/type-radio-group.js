@@ -4,7 +4,10 @@ import { Form, Radio } from "semantic-ui-react";
 export const TypeRadioGroup = ({ setIsChair, isChair }) => {
   const handleChange = (e, { value }) => setIsChair(value);
   return (
-    <Form className="flex flex-col">
+    <Form
+      className="flex flex-col"
+      style={{ marginLeft: -200, gap: 20, marginTop: 50 }}
+    >
       <div className="flex" style={{ gap: 10 }}>
         <Form.Field>
           <Radio
@@ -17,7 +20,7 @@ export const TypeRadioGroup = ({ setIsChair, isChair }) => {
         </Form.Field>
         <Form.Field>
           <Radio
-            label="Сандал"
+            label="Суудал"
             name="radioGroupType"
             value={1}
             checked={isChair === 1}

@@ -50,39 +50,37 @@ export default function Home() {
         alignItems: "center",
         paddingTop: "150px",
         paddingBottom: "150px",
-        // background: `url(${IMAGES.background.src})`,
-        backgroundSize: "cover",
         height: "100vh",
+        marginTop: 30,
       }}
     >
       {state.show && <ReactConfetti width={2000} height={"2000"} />}
-      <div style={{ display: "flex", gap: 100 }}>
+      {/* <div style={{ display: "flex", gap: 100 }}>
         <TypeRadioGroup isChair={isChair} setIsChair={setIsChair} />
-        <RadioGroup prize={prize} setPrize={setPrize} />
-      </div>
+      </div> */}
       <div className="flex">
-        <WheelComponent
-          segments={filteredSegment}
-          segColors={segColors}
-          winningSegment={"no"}
-          onFinished={(winner) => onFinished(winner)}
-          primaryColor="gray"
-          contrastColor="white"
-          buttonText="Spin"
-          isOnlyOnce={false}
-          size={290}
-          upDuration={500}
-          downDuration={600}
-          fontFamily="Arial"
-          width={"100%"}
-        />
-        <Image
-          src={"/prize.png"}
-          width={300}
-          height={700}
-          alt="prize"
-          style={{ marginLeft: -300 }}
-        />
+        <div style={{ marginTop: 100 }}>
+          <WheelComponent
+            segments={filteredSegment}
+            segColors={segColors}
+            winningSegment={"no"}
+            onFinished={(winner) => onFinished(winner)}
+            primaryColor="gray"
+            contrastColor="white"
+            buttonText="Spin"
+            isOnlyOnce={false}
+            size={290}
+            upDuration={500}
+            downDuration={600}
+            fontFamily="Arial"
+            width={"100%"}
+            fontSize={100}
+          />
+        </div>
+        <div className="flex flex-col" >
+          <TypeRadioGroup isChair={isChair} setIsChair={setIsChair} />
+          <RadioGroup prize={prize} setPrize={setPrize} />
+        </div>
       </div>
       {state.portal ? <TrPortal /> : null}
       {state.show && (
@@ -91,10 +89,10 @@ export default function Home() {
           <div className="imageBox">
             {isChair === 0 && (
               <Image
-                src="/wooden-round-table.webp"
+                src="/table.png"
                 alt="prize"
-                width={550}
-                height={300}
+                width={500}
+                height={370}
                 objectFit="contain"
               />
             )}
@@ -109,8 +107,8 @@ export default function Home() {
             )}
           </div>
           <h2 className="titleWin">
-            {isChair === 0 ? "ШИРЭЭ" : "САНДАЛ"} {"   "}
-            <span style={{ fontSize: 50 }}>{state.show}</span>
+            {isChair === 0 ? "ШИРЭЭ" : "СУУДАЛ"} {"   "}
+            <span style={{ fontSize: 50, color: "#bc13fe" }}>{state.show}</span>
             <br />
             <br />
             {isChair === 1 && (
